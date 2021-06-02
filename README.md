@@ -1,2 +1,2 @@
 # LeetcodeSolutions
-solved in python3,javascript and java 
+solved in python3, javascript and java 
