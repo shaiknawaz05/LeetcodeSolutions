@@ -4,4 +4,6 @@ class Solution:
             for b in range(a+1, len(nums)):
                 if nums[a]+nums[b] == target:
                     return [a,b]
-        
+                    
+ #Runtime: 5116 ms, faster than 5.03% of Python3 online submissions for Two Sum.
+ #Memory Usage: 14.7 MB, less than 26.19% of Python3 online submissions for Two Sum.
