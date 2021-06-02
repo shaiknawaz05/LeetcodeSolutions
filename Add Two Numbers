@@ -1,0 +1,32 @@
+Runtime: 5 ms, faster than 6.75% of Java online submissions for Add Two Numbers.
+Memory Usage: 44.8 MB, less than 5.17% of Java online submissions for Add Two Numbers
+
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        return addTwoNumbersHelper(l1, l2, 0);
+    }
+		
+public ListNode addTwoNumbersHelper(ListNode l1, ListNode l2, int carry) {
+        ListNode node = null;
+        int sum = 0;
+        if(l1 == null && l2 == null) {
+            if(carry > 0) {
+                node = new ListNode(carry);
+                return node;
+            } else {
+                return null;
+            }
+        }
+        int l1Val = l1 != null? l1.val:0;
+        int l2Val = l2 != null? l2.val:0;
+        
+        sum = l1Val + l2Val + carry;
+        if(sum >= 10) {
+            carry = 1;
+            sum -= 10;
+        } else {
+            carry = 0;
+        }
+        node = new ListNode(sum);
+        node.next = addTwoNumbersHelper(l1 != null ? l1.next : null,l2 != null ? l2.next : null,carry);              
+        return node;
